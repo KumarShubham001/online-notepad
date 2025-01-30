@@ -1,0 +1,19 @@
+.app {
+	margin: 20px auto;
+	max-width: 80%;
+	height: calc(100vh - 100px);
+	background: rgba(0, 0, 0, 0.2);
+	padding: 30px;
+	overflow-y: auto;
+}
+
+.rdw-editor-main {
+	border: 1px solid;
+	border-radius: 3px;
+	background: white;
+}
+
+.DraftEditor-root {
+	min-height: calc(100vh - 300px);
+	padding: 15px;
+}
