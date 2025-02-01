@@ -13,6 +13,7 @@ const CopyButton: React.FC = () => {
     <button
       className="ml-2 text-white cursor-pointer relative"
       onClick={handleClick}
+      title="Copy link"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

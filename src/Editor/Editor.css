@@ -26,6 +26,7 @@
     font-family: "Lato";
     line-height: 1.6;
     word-break: break-word;
+    max-height: 85vh;
 }
 
 .ck-content h3.category {

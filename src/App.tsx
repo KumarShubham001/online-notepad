@@ -133,7 +133,7 @@ function App() {
   };
 
   return (
-    <div className="bg-slate-900 h-screen w-screen">
+    <div className="bg-slate-900 h-lvh w-lvw">
       <div className="w-full flex justify-center items-center p-5 gap-3">
         <span className="text-xl font-bold    text-white ">
           Notepad: {noteId}
