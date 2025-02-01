@@ -43,7 +43,8 @@ export default function Editor({
           <div ref={editorRef}>
             {editorConfig && (
               <CKEditor
-                data={initialData}
+                // @ts-expect-error
+                data={initialData as string}
                 onChange={(_event, editor) => {
                   onChangeData?.(editor.getData());
                 }}

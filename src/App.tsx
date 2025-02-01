@@ -35,10 +35,6 @@ function App() {
           setEditorData(remoteContent);
           lastSavedContent.current = remoteContent;
           lastUpdateTimestamp.current = remoteTimestamp || new Date();
-          console.log("Updated from remote:", {
-            content: remoteContent,
-            timestamp: remoteTimestamp,
-          });
         }
       }
     });
@@ -126,10 +122,6 @@ function App() {
       );
       lastSavedContent.current = newContent;
       lastUpdateTimestamp.current = now;
-      console.log("Saved local changes:", {
-        content: newContent,
-        timestamp: now,
-      });
     } catch (error) {
       console.error("Error saving document:", error);
     }
