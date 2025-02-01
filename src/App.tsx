@@ -1,6 +1,7 @@
 import { doc, getDoc, onSnapshot, setDoc } from "firebase/firestore";
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
+import CopyButton from "./Components/CopyToClipboard.tsx";
 import { db } from "./configs/firebase-configs.ts";
 import Editor from "./Editor/Editor.tsx";
 
@@ -22,10 +23,6 @@ function App() {
       if (docSnap.exists()) {
         const remoteContent = docSnap.data().content;
         const remoteTimestamp = docSnap.data().updatedAt?.toDate();
-
-        // Only update if:
-        // 1. Content is different AND
-        // 2. Either we don't have a last update timestamp OR the remote update is newer
         if (
           remoteContent !== lastSavedContent.current &&
           (!lastUpdateTimestamp.current ||
@@ -137,10 +134,11 @@ function App() {
 
   return (
     <div className="bg-slate-900 h-screen w-screen">
-      <div className="p-4 w-full max-w-lg mx-auto">
-        <h2 className="text-xl font-bold mb-2 text-center text-white">
+      <div className="w-full flex justify-center items-center p-5 gap-3">
+        <span className="text-xl font-bold    text-white ">
           Notepad: {noteId}
-        </h2>
+        </span>
+        <CopyButton />
       </div>
       <Editor initialData={editorData} onChangeData={handleEditorChange} />
     </div>
