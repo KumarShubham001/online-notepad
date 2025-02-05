@@ -34,16 +34,16 @@ export default function Editor({
   }, [isLayoutReady, initialData]);
 
   return (
-    <div className="main-container">
+    <div className="w-90 h-90 main-container">
       <div
-        className="editor-container editor-container_classic-editor editor-container_include-style editor-container_include-block-toolbar editor-container_include-word-count"
+        className="editor-container_include-block-toolbar editor-container editor-container_classic-editor editor-container_include-style editor-container_include-word-count"
         ref={editorContainerRef}
       >
-        <div className="editor-container__editor">
-          <div ref={editorRef}>
+        <div className="w-full h-full editor-container__editor">
+          <div ref={editorRef} className="w-full h-full">
             {editorConfig && (
               <CKEditor
-                // @ts-expect-error
+                // @ts-expect-error - CKEditor types are not up-to-date
                 data={initialData as string}
                 onChange={(_event, editor) => {
                   onChangeData?.(editor.getData());

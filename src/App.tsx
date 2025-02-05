@@ -115,7 +115,7 @@ function App() {
           content: newContent,
           updatedAt: now,
         },
-        { merge: true },
+        { merge: true }
       );
       lastSavedContent.current = newContent;
       lastUpdateTimestamp.current = now;
@@ -133,11 +133,9 @@ function App() {
   };
 
   return (
-    <div className="bg-slate-900 h-lvh w-lvw">
-      <div className="w-full flex justify-center items-center p-5 gap-3">
-        <span className="text-xl font-bold    text-white ">
-          Notepad: {noteId}
-        </span>
+    <div className="bg-slate-900 px-5 min-w-svw max-w-screen min-h-svh max-h-screen">
+      <div className="flex justify-center items-center gap-3 p-5 w-full">
+        <span className="font-bold text-white text-xl">Notepad: {noteId}</span>
         <CopyButton />
       </div>
       <Editor initialData={editorData} onChangeData={handleEditorChange} />
